@@ -7,6 +7,6 @@ require(["esri/Map", "esri/views/MapView"], (Map, MapView) => {
     container: "viewDiv",
     map: map,
     zoom: 15,
-    center: [-111.7900, 43.8200] // longitude, latitude
+    center: [-111.7900, 43.8200] // longitude and latitude of rexburg
   });
 });
