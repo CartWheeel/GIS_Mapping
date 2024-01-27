@@ -1,7 +1,7 @@
 # Overview
 In this program I explored some of the capabilities of GIS mapping through JavaScript. My main goals where to better understand what GIS mapping is, get familiar with the tools, and display a map with some points. My stretch goal is to display a map that would show the currently open and fast-food in the area chosen.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.loom.com/share/3d436370b93d4cbe80c2f984bd73494b?sid=dfee635c-99ae-475d-adf8-eafd9702f0ca)
 
 # Development Environment
 
