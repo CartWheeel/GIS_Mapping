@@ -8,16 +8,17 @@ require([
   "esri/geometry/Point",
   "esri/Graphic",
   "esri/layers/GraphicsLayer",
-  "esri/symbols/WebStyleSymbol"
-  ], (Map, MapView, places, FetchPlaceParameters, PlacesQueryParameters, Circle, Point, Graphic, GraphicsLayer, WebStyleSymbol) => {
+  "esri/symbols/WebStyleSymbol",
+  "esri/config"
+  ], (Map, MapView, places, FetchPlaceParameters, PlacesQueryParameters, Circle, Point, Graphic, GraphicsLayer, WebStyleSymbol, esriConfig) => {
 
-  // An authorization string used to access the basemap, places, geocoding, and routing services
-  const apiKey = "AAPKfa57fab7d2cc4663812c6c830290de30z6XS-pzGDH3xdEaiscMHRxuvTaPN3J8zj3HIAKzmr8mBt-hwVFJmjRtXu4DwMc9q"
+  // authorization  used to access basemaps, places, routing services
+  esriConfig.apiKey = "AAPKfa57fab7d2cc4663812c6c830290de30z6XS-pzGDH3xdEaiscMHRxuvTaPN3J8zj3HIAKzmr8mBt-hwVFJmjRtXu4DwMc9q";
 
   let infoPanel;  // Left panel for place information
   let clickPoint;  // Clicked point on the map
-  let chicagoPlacesQueryParameters;  // Parameters for queryPlacesNearPoint()
-  let activeCategory = "13000";  // Arts and Entertainment category
+  let rexburgPlacesQueryParameters;  // Parameters for queryPlacesNearPoint()
+  let activeCategory = "13000";  // Dining
   let highlightSelect;  // Feature selection highlight
   let placesLayer = new GraphicsLayer({  // Layer for places features
     id: "graphicsLayer"
@@ -27,7 +28,6 @@ require([
   });
 
   // Left panel interactions
-  const categorySelect = document.getElementById("categorySelect");
   const resultPanel = document.getElementById("results");
   const flow = document.getElementById("flow");
 
@@ -35,10 +35,10 @@ require([
   const circleSymbol = {
     type: "simple-fill",
     style: "solid",
-    color: [3, 140, 255, 0.1],
+    color: [10, 140, 150, 0.1],
     outline: {
       width: 3,
-      color: [3, 140, 255],
+      color: [10, 140, 150],
     },
   };
 
@@ -88,7 +88,7 @@ require([
       center: clickPoint,
       geodesic: true,
       numberOfPoints: 100,
-      radius: 500,  // set radius to 500 meters
+      radius: 300,  // set radius to 500 meters
       radiusUnit: "meters",
     });
     const circleGraphic = new Graphic({
@@ -99,7 +99,7 @@ require([
     bufferLayer.graphics.add(circleGraphic);
 
     // Pass search area, categories, and API Key to places service
-    chicagoPlacesQueryParameters = new PlacesQueryParameters({
+    rexburgPlacesQueryParameters = new PlacesQueryParameters({
       apiKey,
       categoryIds: [activeCategory],
       radius: 500,  // set radius to 500 meters
@@ -107,7 +107,7 @@ require([
     });
     // The results variable represents the PlacesQueryResult
     const results = await places.queryPlacesNearPoint(
-      chicagoPlacesQueryParameters
+      rexburgPlacesQueryParameters
     );
     // Pass the PlacesQueryResult to the tabulatePlaces() function
     tabulatePlaces(results);

@@ -15,6 +15,7 @@ body,
   margin: 5px;
 }
 
+/* Adjust the sizing of the side panel */
 #contents {
   --calcite-shell-panel-min-width: 300px;
 }
