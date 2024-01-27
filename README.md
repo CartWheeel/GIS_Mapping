@@ -1,30 +1,20 @@
 # Overview
-
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
-
-{Provide a description the ma software that you wrote. Describe how to use your software.  Describe the source of the data that you used.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.}
+In this program I explored some of the capabilities of GIS mapping through JavaScript. My main goals where to better understand what GIS mapping is, get familiar with the tools, and display a map with some points. My stretch goal is to display a map that would show the currently open and fast-food in the area chosen.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+I programmed in VS Code using JavaScript, HTML, and CSS.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [ArcGIS](https://developers.arcgis.com/javascript/latest/)
+* [w3schools](https://www.w3schools.com/js/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Fix API key to properly display on my own machine.
+* Adjust clickpoint to instead be window view.
+* Add widget to add places to go to and automatically use best routing.
+* Implement clock to read current time and only display places currently open.

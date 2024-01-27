@@ -6,3 +6,15 @@ body,
   height: 100%;
   width: 100%;
 }
+
+#viewDiv {
+  flex: 1;
+}
+
+#categorySelect {
+  margin: 5px;
+}
+
+#contents {
+  --calcite-shell-panel-min-width: 300px;
+}
